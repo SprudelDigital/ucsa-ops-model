@@ -153,17 +153,57 @@ export const competitiveData = {
 };
 
 export const financialsData = {
-  incomeStatement: [
-    { item: "Revenue", y1: 2900, y2: 12800, y3: 28500, y4: 33200, y5: 34700, y10: 43100, y15: 53600 },
-    { item: "O&M", y1: -540, y2: -2400, y3: -5300, y4: -5500, y5: -5700, y10: -6500, y15: -7400 },
-    { item: "Gross Profit", y1: 2360, y2: 10400, y3: 23200, y4: 27700, y5: 29000, y10: 36600, y15: 46200, bold: true },
-    { item: "Staffing + Overhead", y1: -5800, y2: -8800, y3: -10200, y4: -10600, y5: -11000, y10: -13400, y15: -16300 },
-    { item: "EBITDA", y1: -3440, y2: 1600, y3: 13000, y4: 17100, y5: 18000, y10: 23200, y15: 29900, bold: true, highlight: true },
-    { item: "Book Depreciation", y1: -2400, y2: -6700, y3: -11000, y4: -11000, y5: -11000, y10: -11000, y15: -11000 },
-    { item: "Interest", y1: -2200, y2: -6100, y3: -9800, y4: -9100, y5: -8400, y10: -4900, y15: -500 },
-    { item: "EBT", y1: -8040, y2: -11200, y3: -7800, y4: -3000, y5: -1400, y10: 7300, y15: 18400 },
-    { item: "Tax (27%, after 12B)", y1: 0, y2: 0, y3: 0, y4: 0, y5: 0, y10: 1971, y15: 4968 },
-    { item: "Net Profit", y1: -8040, y2: -11200, y3: -7800, y4: -3000, y5: -1400, y10: 5329, y15: 13432, bold: true },
+  // Three income statements: [0] Base 10.2% WACC, [1] DFI 8.0% WACC, [2] Stress 12.0% WACC
+  // Revenue through EBITDA identical (operating). Interest varies by capital structure.
+  // Base: ZAR 99M debt @ blended 9.1% (senior 74.25M@8.5%, mezz 24.75M@11%)
+  // DFI:  ZAR 82.5M debt @ blended 4.2% (concessional 49.5M@3%, green bonds 33M@6%)
+  // Stress: ZAR 82.5M debt @ blended 10.4% (senior 66M@10%, mezz 16.5M@12%)
+  // Tax = 27% × max(EBT, 0), consistent with V4 financial model methodology.
+  incomeStatements: [
+    // Base Case (10.2% WACC)
+    [
+      { item: "Revenue", y1: 2900, y2: 12800, y3: 28500, y4: 33200, y5: 34700, y10: 43100, y15: 53600 },
+      { item: "O&M", y1: -540, y2: -2400, y3: -5300, y4: -5500, y5: -5700, y10: -6500, y15: -7400 },
+      { item: "Gross Profit", y1: 2360, y2: 10400, y3: 23200, y4: 27700, y5: 29000, y10: 36600, y15: 46200, bold: true },
+      { item: "Staffing + Overhead", y1: -5800, y2: -8800, y3: -10200, y4: -10600, y5: -11000, y10: -13400, y15: -16300 },
+      { item: "EBITDA", y1: -3440, y2: 1600, y3: 13000, y4: 17100, y5: 18000, y10: 23200, y15: 29900, bold: true, highlight: true },
+      { item: "Book Depreciation", y1: -2400, y2: -6700, y3: -11000, y4: -11000, y5: -11000, y10: -11000, y15: -11000 },
+      { item: "Interest", y1: -2200, y2: -6100, y3: -9800, y4: -9100, y5: -8400, y10: -4900, y15: -500 },
+      { item: "EBT", y1: -8040, y2: -11200, y3: -7800, y4: -3000, y5: -1400, y10: 7300, y15: 18400 },
+      { item: "Tax (27%, after 12B)", y1: 0, y2: 0, y3: 0, y4: 0, y5: 0, y10: 1971, y15: 4968 },
+      { item: "Net Profit", y1: -8040, y2: -11200, y3: -7800, y4: -3000, y5: -1400, y10: 5329, y15: 13432, bold: true },
+    ],
+    // DFI Confirmed (8.0% WACC) — interest scaled to 38.4% of base ((82.5M×4.2%)/(99M×9.1%))
+    [
+      { item: "Revenue", y1: 2900, y2: 12800, y3: 28500, y4: 33200, y5: 34700, y10: 43100, y15: 53600 },
+      { item: "O&M", y1: -540, y2: -2400, y3: -5300, y4: -5500, y5: -5700, y10: -6500, y15: -7400 },
+      { item: "Gross Profit", y1: 2360, y2: 10400, y3: 23200, y4: 27700, y5: 29000, y10: 36600, y15: 46200, bold: true },
+      { item: "Staffing + Overhead", y1: -5800, y2: -8800, y3: -10200, y4: -10600, y5: -11000, y10: -13400, y15: -16300 },
+      { item: "EBITDA", y1: -3440, y2: 1600, y3: 13000, y4: 17100, y5: 18000, y10: 23200, y15: 29900, bold: true, highlight: true },
+      { item: "Book Depreciation", y1: -2400, y2: -6700, y3: -11000, y4: -11000, y5: -11000, y10: -11000, y15: -11000 },
+      { item: "Interest", y1: -800, y2: -2300, y3: -3800, y4: -3500, y5: -3200, y10: -1900, y15: -200 },
+      { item: "EBT", y1: -6640, y2: -7400, y3: -1800, y4: 2600, y5: 3800, y10: 10300, y15: 18700 },
+      { item: "Tax (27%, after 12B)", y1: 0, y2: 0, y3: 0, y4: 702, y5: 1026, y10: 2781, y15: 5049 },
+      { item: "Net Profit", y1: -6640, y2: -7400, y3: -1800, y4: 1898, y5: 2774, y10: 7519, y15: 13651, bold: true },
+    ],
+    // Stress (12.0% WACC) — interest scaled to 95.2% of base ((82.5M×10.4%)/(99M×9.1%))
+    [
+      { item: "Revenue", y1: 2900, y2: 12800, y3: 28500, y4: 33200, y5: 34700, y10: 43100, y15: 53600 },
+      { item: "O&M", y1: -540, y2: -2400, y3: -5300, y4: -5500, y5: -5700, y10: -6500, y15: -7400 },
+      { item: "Gross Profit", y1: 2360, y2: 10400, y3: 23200, y4: 27700, y5: 29000, y10: 36600, y15: 46200, bold: true },
+      { item: "Staffing + Overhead", y1: -5800, y2: -8800, y3: -10200, y4: -10600, y5: -11000, y10: -13400, y15: -16300 },
+      { item: "EBITDA", y1: -3440, y2: 1600, y3: 13000, y4: 17100, y5: 18000, y10: 23200, y15: 29900, bold: true, highlight: true },
+      { item: "Book Depreciation", y1: -2400, y2: -6700, y3: -11000, y4: -11000, y5: -11000, y10: -11000, y15: -11000 },
+      { item: "Interest", y1: -2100, y2: -5800, y3: -9300, y4: -8700, y5: -8000, y10: -4700, y15: -500 },
+      { item: "EBT", y1: -7940, y2: -10900, y3: -7300, y4: -2600, y5: -1000, y10: 7500, y15: 18400 },
+      { item: "Tax (27%, after 12B)", y1: 0, y2: 0, y3: 0, y4: 0, y5: 0, y10: 2025, y15: 4968 },
+      { item: "Net Profit", y1: -7940, y2: -10900, y3: -7300, y4: -2600, y5: -1000, y10: 5475, y15: 13432, bold: true },
+    ],
+  ],
+  incomeStatementNotes: [
+    "Interest: blended 9.1% on ZAR 99M debt (senior 74.25M @ 8.5%, mezz 24.75M @ 11%). Revenue in Y1 reflects 10 sites at 50% capacity.",
+    "Interest: blended 4.2% on ZAR 82.5M debt (concessional 49.5M @ 3%, green bonds 33M @ 6%). Grants ZAR 16.5M at 0%.",
+    "Interest: blended 10.4% on ZAR 82.5M debt (senior 66M @ 10%, mezz 16.5M @ 12%). Higher equity proportion (50%).",
   ],
   deploymentSchedule: [
     { year: "Y1", sites: 10, cumulative: 10, staff: "7→10", staffCost: "ZAR 5.8M", capex: "ZAR 36M", note: "Pilot sites (reference installs)" },

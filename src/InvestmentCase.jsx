@@ -380,7 +380,7 @@ function FinancialsTab() {
             </tr>
           </thead>
           <tbody>
-            {financialsData.incomeStatement.map((row, i) => (
+            {financialsData.incomeStatements[scenario].map((row, i) => (
               <tr key={i} style={{ borderBottom: "1px solid " + t.border, background: row.highlight ? (t.accentLime + "0A") : "transparent" }}>
                 <td style={{
                   padding: "11px 18px",
@@ -407,7 +407,7 @@ function FinancialsTab() {
           </tbody>
         </table>
         <div style={{ padding: "10px 18px", fontSize: 11, color: t.text2, borderTop: "1px solid " + t.border }}>
-          Note: Revenue in Y1 reflects 10 sites at 50% capacity (commissioning year). Y3 onward reflects escalation at 5% p.a.
+          Note: {financialsData.incomeStatementNotes[scenario]}
         </div>
       </div>
 
