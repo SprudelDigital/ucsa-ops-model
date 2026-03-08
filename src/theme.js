@@ -1,0 +1,15 @@
+export const theme = {
+  bg: "#080E1A",
+  surface: "#0D1526",
+  surfaceHigh: "#111E35",
+  border: "#1A2540",
+  borderHigh: "#243558",
+  text1: "#E4E4E7",
+  text2: "#6B7A9A",
+  accentLime: "#C4D32F",
+  accentCyan: "#8FEBFF",
+  accentBlue: "#4A81E5",
+  fontHead: "'Poppins', sans-serif",
+  fontBody: "'Inter', sans-serif",
+  fontMono: "'JetBrains Mono', monospace",
+};
