@@ -176,13 +176,13 @@ const pillars = [
     subtitle: "From Spreadsheets → Real-Time Investor Intelligence",
     icon: "◆",
     accent: "#38BDF8",
-    currentState: "Financial models and investor reporting exist as static spreadsheets and quarterly PDFs. The Monte Carlo simulation (79% probability IRR >15%, <4% negative NPV) is powerful — but only accessible to people who read the business plan.",
+    currentState: "Financial models and investor reporting exist as static spreadsheets and quarterly PDFs. The Monte Carlo simulation (10,000 iterations, stochastic mean project IRR 4.1%) is powerful — but only accessible to people who read the business plan.",
     vision: "Live financial data flowing from operations into investor-grade dashboards. Every ZAR tracked in real-time. Investors get a login — not quarterly PDFs. The scan confirms: most renewable portfolios report quarterly at best. This alone differentiates UCSA in fundraising and can meaningfully reduce cost of capital for DFI funders.",
     partners: "Power Factors Unity (end-to-end asset management, #1 ranked EMS) · Fluence Digital/Nispera (explicitly targets Africa, 15+ GW managed) · Custom financial engine for SA-specific metrics (Section 12B, DSCR, CEIT modelling)",
     opportunities: [
       {
         name: "Real-Time Portfolio IRR Tracker",
-        description: "Live IRR, NPV, and DSCR based on actual cash flows — not projections. Compares actuals vs. business plan. Early warning when metrics trend below threshold. Integrates Monte Carlo confidence bands (base 19.2% IRR, P10: 13.5%, P90: 23.4%).",
+        description: "Live IRR, NPV, and DSCR based on actual cash flows — not projections. Compares actuals vs. business plan. Early warning when metrics trend below threshold. Integrates Monte Carlo confidence bands (deterministic 15.2% project IRR; stochastic P10: −1.5%, P50: 4.0%, P90: 9.7%).",
         impact: "Massive investor confidence — transforms fundraising conversations",
         tools: "Custom financial engine, real-time billing/Netvendor feeds, React dashboard",
         cost: "ZAR 200–350K build",
@@ -409,26 +409,23 @@ export default function OpsModel() {
   ];
 
   const metrics = [
-    { label: "CAPEX", value: "ZAR 150M" },
-    { label: "IRR", value: "19.2%" },
-    { label: "NPV @8%", value: "ZAR 41.8M" },
-    { label: "P(IRR>15%)", value: "79%" },
-    { label: "Payback", value: "6.8yr" },
+    { label: "CAPEX", value: "ZAR 165M" },
+    { label: "PROJECT IRR", value: "15.2%" },
+    { label: "EQUITY IRR", value: "21–23%" },
+    { label: "NPV (BASE)", value: "ZAR 22–28M" },
+    { label: "PAYBACK", value: "7.5yr" },
   ];
 
   return (
     <div style={{ fontFamily: bodyFont, background: bg, minHeight: "100vh", color: text1 }}>
 
       {/* Header */}
-      <div style={{ borderBottom: `1px solid ${border}`, padding: "32px 28px 24px" }}>
+      <div style={{ borderBottom: `1px solid ${border}`, padding: "24px 28px 20px" }}>
         <div style={{ maxWidth: 880, margin: "0 auto" }}>
-          <div style={{ fontFamily: font, fontSize: 10, letterSpacing: "3px", color: text2, marginBottom: 12 }}>
-            UCSA ASSET COMPANY
-          </div>
-          <h1 style={{ fontFamily: font, fontSize: 22, fontWeight: 700, margin: "0 0 6px", color: text1, lineHeight: 1.3 }}>
-            Advanced Operational Model <span style={{ color: accent }}>v2</span>
-          </h1>
-          <p style={{ fontSize: 14, color: text2, margin: "0 0 24px", maxWidth: 600, lineHeight: 1.6 }}>
+          <h2 style={{ fontFamily: font, fontSize: 18, fontWeight: 700, margin: "0 0 6px", color: text1, lineHeight: 1.3 }}>
+            Advanced Operational Model
+          </h2>
+          <p style={{ fontSize: 14, color: text2, margin: "0 0 20px", maxWidth: 600, lineHeight: 1.6 }}>
             Five-pillar intelligence platform for a 50-site solar portfolio. Refined against global competitive scan of 50+ companies and stress-tested financial model.
           </p>
 
