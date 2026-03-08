@@ -411,8 +411,8 @@ export default function OpsModel() {
   const metrics = [
     { label: "CAPEX", value: "ZAR 165M" },
     { label: "PROJECT IRR", value: "15.2%" },
-    { label: "EQUITY IRR", value: "21–23%" },
-    { label: "NPV (BASE)", value: "ZAR 22–28M" },
+    { label: "EQUITY IRR", value: "22.1%" },
+    { label: "NPV (BASE)", value: "ZAR 24.6M" },
     { label: "PAYBACK", value: "7.5yr" },
   ];
 
