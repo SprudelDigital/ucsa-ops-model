@@ -5,42 +5,41 @@ const pillars = [
   {
     id: "intelligence",
     title: "Intelligence Layer",
-    subtitle: "From Cloud Storage → Edge+Cloud Predictive Engine",
+    subtitle: "On-Site + Cloud Predictive Engine",
     icon: "◈",
     accent: "#34D399",
-    currentState: "The Systems Plan allocates ZAR 180–360K for a cloud database and ZAR 90K for APIs. This gives storage — not intelligence. Architecture assumes reliable broadband at every site, which SA's connectivity reality doesn't support.",
-    vision: "Build a hybrid edge+cloud data platform. Edge devices at each site run inference models locally (fault detection, basic dispatch) while cloud aggregates portfolio intelligence. IoT telemetry, weather, Eskom schedules, COCT tariffs, and Netvendor vending data flow into a unified lake. AI doesn't just report — it predicts and prescribes.",
+    description: "A hybrid data platform combining on-site processing at each property with centralised cloud intelligence. On-site devices run predictive software locally — detecting faults, managing basic dispatch — even when internet connectivity is unreliable. Meanwhile, the cloud aggregates portfolio-wide data: real-time sensor readings, weather, Eskom schedules, City of Cape Town tariffs, and Netvendor vending data flow into a centralised data platform. The system doesn't just report — it predicts and prescribes, turning raw data into actionable decisions across all 50 sites.",
     partners: "SmartHelio Autopilot (physics-informed AI, no extra hardware, 8% performance boost, Africa expansion) · Open Access Energy (SA-native, distributed energy focus) · Meteocontrol VCOM Cloud (41,000+ systems, manufacturer-agnostic)",
     opportunities: [
       {
         name: "AI Site Assessment Engine",
-        description: "Satellite imagery (Google Solar API) + municipal consumption data + load profiles → automated system sizing in minutes. Train on first 10 pilot sites, improve with each deployment. Competitive scan confirms Aurora Solar (20M+ projects) and OpenSolar (free, AI-powered) as design partners.",
+        description: "Uses satellite imagery and municipal consumption data to automatically size solar systems in minutes. Trained on the first 10 pilot sites, the model improves with each deployment. Aurora Solar (20M+ projects) and OpenSolar (free, AI-powered) are confirmed design partners.",
         impact: "Proposals from 2-3 days to 2-3 hours",
-        tools: "Google Solar API, OpenSolar/Aurora, Python/TensorFlow",
+        tools: "Google Solar API, OpenSolar/Aurora, AI/machine learning software",
         cost: "ZAR 150–250K build",
         priority: "high"
       },
       {
-        name: "Edge-Deployed Fault Detection",
-        description: "Lightweight ML models trained in cloud, deployed at edge. 92.8% fault detection accuracy on-device (ABB benchmark). Works during internet outages — critical for SA connectivity. Flags inverter anomalies, battery degradation, production drops locally, syncs to cloud when connected.",
-        impact: "Sub-second anomaly detection vs. minutes for cloud roundtrip. Works offline.",
-        tools: "Edge compute (Raspberry Pi 4/Jetson Nano), TensorFlow Lite, MQTT",
+        name: "On-Site Fault Detection",
+        description: "Lightweight AI models trained in the cloud and installed directly on-site. Achieves 92.8% fault detection accuracy on-device (ABB benchmark). Continues working during internet outages — critical for South African connectivity. Flags inverter anomalies, battery degradation, and production drops locally, then syncs to the cloud when reconnected.",
+        impact: "Sub-second anomaly detection vs. minutes for cloud-based checks. Works offline.",
+        tools: "On-site processing hardware, lightweight AI software, standard device communication",
         cost: "ZAR 8-12K per site hardware + ZAR 200K model development",
         priority: "high"
       },
       {
         name: "Portfolio Digital Twin",
-        description: "Real-time simulation of all 50 sites. Each site has a physics-based digital twin comparing actual vs. predicted performance. The scan found one site lost 35% output undetected for 3 months pre-digital-twin. SmartHelio's solarGPT enables natural-language querying of plant data.",
+        description: "A real-time virtual model of all 50 sites, comparing actual performance against predicted output. Without this, one site lost 35% output undetected for 3 months. SmartHelio's solarGPT enables plain-language querying of plant data — ask questions and get instant answers.",
         impact: "1 person manages what currently needs 3-4. 8% performance uplift (SmartHelio benchmark).",
-        tools: "SmartHelio Autopilot or custom React + InfluxDB + edge gateway",
+        tools: "SmartHelio Autopilot or custom monitoring platform",
         cost: "ZAR 200–350K build + ZAR 5-8K/month",
         priority: "high"
       },
       {
         name: "Energy Yield Forecasting",
-        description: "ML model combining weather data, panel degradation curves, and real consumption patterns. Forecasts production 72 hours ahead for dynamic grid export optimization (sell when COCT prices peak via Cash for Power program — already R30.8M+ in credits).",
-        impact: "10-15% improvement in SSEG export revenue",
-        tools: "Weather APIs, Prophet/LSTM models, COCT feed-in tariff API",
+        description: "AI model combining weather data, panel degradation curves, and real consumption patterns. Forecasts production 72 hours ahead to optimise grid export timing — selling when City of Cape Town prices peak via the Cash for Power program (already R30.8M+ in credits).",
+        impact: "10-15% improvement in small-scale embedded generation (SSEG) export revenue",
+        tools: "Weather APIs, forecasting algorithms, City of Cape Town feed-in tariff API",
         cost: "ZAR 180–300K development",
         priority: "medium"
       }
@@ -49,16 +48,15 @@ const pillars = [
   {
     id: "automation",
     title: "Automation Engine",
-    subtitle: "From Manual Processes → Self-Running Operations",
+    subtitle: "Self-Running Operations at Scale",
     icon: "⚡",
     accent: "#A78BFA",
-    currentState: "The Systems Plan budgets ZAR 126–180K for proposal generation and ZAR 108K for billing. These are individual tools, not an integrated automation engine. No workflow chaining between systems.",
-    vision: "Chain every process into automated workflows where human involvement is the exception. The scan confirms portfolio-scale platforms now manage 200,000+ sites with automated ticketing and smart dispatch. For UCSA's 50 sites, 2-3 ops staff should manage the entire portfolio.",
+    description: "Every operational process is chained into automated workflows where human involvement is the exception, not the rule. Portfolio-scale platforms already manage 200,000+ sites with automated ticketing and smart dispatch. For UCSA's 50 sites, 2-3 operations staff manage the entire portfolio — from lead qualification through billing and maintenance. The system connects sales, project management, billing, and field operations into a single continuous pipeline.",
     partners: "Monday.com (CRM + project hub) · Make.com (workflow automation) · Scoop Solar (250,000+ sites managed) · Volter (PPA billing automation, launched Aug 2024) · FieldPulse (technician dispatch)",
     opportunities: [
       {
         name: "Lead-to-Proposal Pipeline",
-        description: "Body corporate contacts website → AI qualifies lead (estate size, consumption, roof area from satellite) → auto-generates customised financial proposal with site-specific ROI → sends via automated sequence. Sales team only touches high-intent leads. Pipeline target: 40% close rate.",
+        description: "When a body corporate contacts the website, AI qualifies the lead — assessing estate size, consumption, and roof area from satellite imagery — then auto-generates a customised financial proposal with site-specific ROI. The sales team only engages high-intent leads. Pipeline target: 40% close rate.",
         impact: "3x pipeline throughput with same sales team",
         tools: "Monday.com + Make.com + AI site assessment + e-signature",
         cost: "ZAR 100–180K build + ZAR 8-12K/month",
@@ -66,7 +64,7 @@ const pillars = [
       },
       {
         name: "Netvendor Revenue Automation",
-        description: "Full billing cycle: IoT meters → PPA charges + Netvendor commission split → auto-invoices → payment collection → bank feed reconciliation → arrears flagging. The ZAR 6M/year commission revenue runs itself. Volter (purpose-built PPA billing) or custom integration.",
+        description: "End-to-end billing automation: smart meters feed PPA charges and Netvendor commission splits into auto-generated invoices, with automated payment collection, bank reconciliation, and arrears flagging. The ZAR 6M/year commission revenue runs itself. Volter (purpose-built PPA billing) or custom integration.",
         impact: "Eliminates 1-2 finance positions (ZAR 500-800K/year saved)",
         tools: "Netvendor API, Volter or Xero integration, Make.com",
         cost: "ZAR 200–350K build",
@@ -74,17 +72,17 @@ const pillars = [
       },
       {
         name: "Predictive Maintenance Dispatch",
-        description: "Edge sensors detect anomalies → ML classifies severity → auto-creates tickets → dispatches nearest technician with parts list → mobile app confirmation → client portal update. Scan benchmark: predictive maintenance cuts costs up to 40%.",
+        description: "On-site sensors detect anomalies, AI classifies severity, and the system auto-creates tickets, dispatches the nearest technician with a parts list, confirms via mobile app, and updates the client portal. Benchmark data shows predictive maintenance cuts costs up to 40%.",
         impact: "15-20% downtime reduction, 30% fewer emergency callouts",
-        tools: "Edge ML + Monday.com/FieldPulse + mobile PWA",
+        tools: "On-site AI + Monday.com/FieldPulse + mobile web app",
         cost: "ZAR 250–400K build",
         priority: "medium"
       },
       {
         name: "Regulatory & Compliance Autopilot",
-        description: "Auto-generates SSEG applications for COCT, tracks permit status, manages NERSA registration, auto-files compliance reports. Each new site follows a templatised workflow. Critical for scaling from 10 to 50 sites without adding admin staff.",
+        description: "Auto-generates SSEG applications for the City of Cape Town, tracks permit status, manages NERSA registration, and auto-files compliance reports. Each new site follows a templated workflow — critical for scaling from 10 to 50 sites without adding admin staff.",
         impact: "Project onboarding from weeks to days",
-        tools: "Docassemble, workflow engine, SignRequest",
+        tools: "Document automation, workflow engine, SignRequest",
         cost: "ZAR 80–150K build",
         priority: "medium"
       }
@@ -93,32 +91,31 @@ const pillars = [
   {
     id: "trading",
     title: "Energy Trading & Grid Intelligence",
-    subtitle: "From Static PPAs → Dynamic Energy Platform",
+    subtitle: "Dynamic Energy Portfolio & New Revenue Streams",
     icon: "◇",
     accent: "#F59E0B",
-    currentState: "The business plan models PPA and commission as flat revenue streams with simple escalation. No consideration of virtual wheeling, VPP aggregation, carbon monetization, or dynamic pricing. This leaves ZAR 4-6M/year on the table.",
-    vision: "Transform UCSA's 50-site battery fleet into a tradeable energy portfolio. Virtual wheeling enables many-to-many trading across 168 municipalities. Carbon credits from 9,300 tons CO₂/year generate ZAR 1.7-2.3M annually. EV charging adds 6-9% revenue. The scan identifies this as 'the single highest-impact strategic development.'",
-    partners: "Vodacom/Mezzanine (virtual wheeling, 168 municipalities) · Asoba Energy (VPP orchestration, SA-native) · Stem/AlsoEnergy PowerTrack (battery dispatch optimization, 5.6 GWh managed) · Gold Standard/Verra (carbon credit registration)",
+    description: "UCSA's 50-site battery fleet becomes a tradeable energy portfolio. Virtual wheeling enables many-to-many energy trading across 168 municipalities — selling surplus generation to off-site buyers without physical infrastructure changes. Carbon credits from 9,300 tons CO₂ avoided per year generate ZAR 1.7-2.3M annually. EV charging adds 6-9% revenue. Combined, these revenue streams unlock ZAR 4-6M/year beyond the base PPA and commission model. The competitive scan identifies this as the single highest-impact strategic development for the business.",
+    partners: "Vodacom/Mezzanine (virtual wheeling, 168 municipalities) · Asoba Energy (VPP orchestration, SA-native) · Stem/AlsoEnergy PowerTrack (battery dispatch optimisation, 5.6 GWh managed) · Gold Standard/Verra (carbon credit registration)",
     opportunities: [
       {
         name: "Virtual Wheeling Integration",
-        description: "Vodacom's Mezzanine platform enables many-to-many energy trading across 168 municipalities without physical infrastructure changes. UCSA's distributed portfolio can sell excess generation to off-site buyers. This transforms economics from per-site to portfolio-level optimization.",
+        description: "Vodacom's Mezzanine platform enables energy trading across 168 municipalities without physical infrastructure changes. UCSA's distributed portfolio sells excess generation to off-site buyers, transforming the economics from per-site optimisation to portfolio-level trading.",
         impact: "Potentially 15-25% revenue uplift on export energy",
-        tools: "Mezzanine platform API, PowerX/Etana partnerships, NERSA registration",
+        tools: "Mezzanine platform integration, PowerX/Etana partnerships, NERSA registration",
         cost: "ZAR 150–250K integration + licensing",
         priority: "high"
       },
       {
         name: "Virtual Power Plant Aggregation",
-        description: "Aggregate 50-site battery fleet for grid services. Sunrun validates this: 217,000 systems dispatching 18 GWh, 416 MW peak output. As SA's capacity market develops, UCSA's fleet becomes a dispatchable asset. Asoba Energy's Ona platform is purpose-built for African VPP orchestration.",
+        description: "Aggregates the 50-site battery fleet to provide grid services as a single dispatchable asset. Sunrun validates this model at scale: 217,000 systems dispatching 18 GWh with 416 MW peak output. As South Africa's capacity market develops, UCSA's fleet is positioned to participate. Asoba Energy's Ona platform is purpose-built for African markets.",
         impact: "New revenue stream from grid services (ZAR 500K-1.5M/year at scale)",
-        tools: "Asoba Ona platform or Stem Athena, battery fleet API, grid operator interface",
+        tools: "Asoba Ona platform or Stem Athena, battery fleet management, grid operator interface",
         cost: "ZAR 200–350K build",
         priority: "medium"
       },
       {
         name: "Carbon Credit Monetization",
-        description: "9,300 tons CO₂ avoided annually across the portfolio. At voluntary market prices (ZAR 180-250/ton in SA 2026), that's immediate revenue. Register under Gold Standard or Verra — 4-6 month process. DFI funders love this for ESG reporting.",
+        description: "The portfolio avoids 9,300 tons CO₂ annually. At voluntary market prices (ZAR 180-250/ton in SA 2026), that translates to immediate revenue. Registration under Gold Standard or Verra takes 4-6 months. DFI funders value this highly for ESG reporting.",
         impact: "ZAR 1.7–2.3M extra annual revenue from Year 2",
         tools: "Gold Standard/Verra registration, ESG reporting platform",
         cost: "ZAR 250-300K registration + annual audit",
@@ -126,7 +123,7 @@ const pillars = [
       },
       {
         name: "EV Charging Network",
-        description: "Every site has parking. Add 4-8 EV chargers per site at marginal capex. Charge R4.50/kWh + 15% margin. Cape Town EV adoption is accelerating (GreenCape 2026 data). Low-hanging fruit that future-proofs assets and increases site stickiness.",
+        description: "Every site has parking infrastructure. Adding 4-8 EV chargers per site at marginal capital cost, charging R4.50/kWh with 15% margin. Cape Town EV adoption is accelerating (GreenCape 2026 data). Future-proofs assets and increases long-term site retention.",
         impact: "+6-9% portfolio revenue by Year 4",
         tools: "EV charger hardware, billing integration, load management",
         cost: "ZAR 80-120K per site",
@@ -137,24 +134,23 @@ const pillars = [
   {
     id: "engagement",
     title: "Client Intelligence Platform",
-    subtitle: "From Portal → Retention & Upsell Engine",
+    subtitle: "Retention & Upsell Engine for Body Corporates",
     icon: "◉",
     accent: "#F87171",
-    currentState: "The Systems Plan allocates ZAR 180–270K for a client portal and ZAR 90K for a chatbot. Standard features every solar company will eventually offer. No competitive differentiation.",
-    vision: "Build a client experience so good it becomes your #1 sales tool. Body corporates hear about it from existing clients. The portal makes the business case for expansion, referrals, and long-term retention. Globally, no competitor offers this for residential estates — the scan found UCSA's integrated model is genuinely rare among 50+ companies profiled.",
+    description: "A client experience so compelling it becomes the number one sales tool. Body corporates hear about it from existing clients. The platform makes the business case for expansion, referrals, and long-term retention — showing trustees exactly how solar is performing and where further savings are available. Globally, no competitor offers this integrated model for residential estates. Across 50+ companies profiled, UCSA's approach is genuinely unique.",
     partners: "Ivy Energy (closest US analogue for tenant billing) · Allume Energy (physical solar distribution, 2,300+ apartments) · Bboxx Pulse (500,000+ systems managed with integrated billing — platform logic is directly transferable)",
     opportunities: [
       {
         name: "Body Corporate Decision Dashboard",
-        description: "Purpose-built for trustees to present at AGMs. Shows: total savings, pre-solar comparison, CO₂ reduction (feeding carbon credit data), levy impact, projected savings, and ESG score. Auto-generates PDF AGM report each quarter. No competitor offers this.",
+        description: "Purpose-built for trustees to present at AGMs. Displays total savings, pre-solar comparison, CO₂ reduction (feeding carbon credit data), levy impact, projected savings, and ESG score. Auto-generates a PDF AGM report each quarter. No competitor offers this.",
         impact: "Directly addresses decision-maker needs (justify investment to residents)",
-        tools: "React dashboard, automated PDF, email scheduling",
+        tools: "Web dashboard, automated PDF generation, email scheduling",
         cost: "ZAR 150–250K build",
         priority: "high"
       },
       {
         name: "AI-Powered Expansion Engine",
-        description: "Automatically identifies upsell: 'Site X consumption grew 15% — recommend battery upgrade' or 'Estate Y has unused roof for 40kWp expansion.' Auto-sends proposals with financial projections. Adds EV charging recommendations where parking utilization is high.",
+        description: "Automatically identifies upsell opportunities: 'Site X consumption grew 15% — recommend battery upgrade' or 'Estate Y has unused roof for 40kWp expansion.' Auto-sends proposals with financial projections. Adds EV charging recommendations where parking utilisation is high.",
         impact: "5-8% annual organic revenue growth within existing portfolio",
         tools: "Custom analytics, automated proposal generation, CRM triggers",
         cost: "ZAR 100–180K build",
@@ -162,9 +158,9 @@ const pillars = [
       },
       {
         name: "Tenant Energy App",
-        description: "Mobile-first app showing consumption, costs, solar contribution. Gamification (compare neighbours, monthly badges). Integrates Netvendor for prepaid top-ups. EV charging session tracking. Drives tenant satisfaction, reduces body corporate support burden.",
+        description: "A mobile-friendly web app showing each tenant their consumption, costs, and solar contribution. Includes neighbourhood comparisons and monthly badges to encourage engagement. Integrates Netvendor for prepaid top-ups and EV charging session tracking. Reduces body corporate support burden.",
         impact: "40% reduction in support queries, improved tenant retention",
-        tools: "React Native / PWA, Netvendor API, push notifications",
+        tools: "Mobile web app, Netvendor API, push notifications",
         cost: "ZAR 200–350K build",
         priority: "low"
       }
@@ -173,24 +169,23 @@ const pillars = [
   {
     id: "financial",
     title: "Financial Command Centre",
-    subtitle: "From Spreadsheets → Real-Time Investor Intelligence",
+    subtitle: "Real-Time Investor Intelligence & Portfolio Tracking",
     icon: "◆",
     accent: "#38BDF8",
-    currentState: "Financial models and investor reporting exist as static spreadsheets and quarterly PDFs. The Monte Carlo simulation (10,000 iterations, stochastic mean project IRR 4.1%) is powerful — but only accessible to people who read the business plan.",
-    vision: "Live financial data flowing from operations into investor-grade dashboards. Every ZAR tracked in real-time. Investors get a login — not quarterly PDFs. The scan confirms: most renewable portfolios report quarterly at best. This alone differentiates UCSA in fundraising and can meaningfully reduce cost of capital for DFI funders.",
+    description: "Live financial data flows from operations into investor-grade dashboards. Every ZAR is tracked in real-time. Investors get a login — not quarterly PDFs. Most renewable portfolios report quarterly at best; real-time transparency differentiates UCSA in fundraising and can meaningfully reduce cost of capital for DFI funders. The Monte Carlo simulation (10,000 iterations, stochastic mean project IRR 4.1%) is surfaced live alongside actual performance, giving investors continuous visibility into portfolio health.",
     partners: "Power Factors Unity (end-to-end asset management, #1 ranked EMS) · Fluence Digital/Nispera (explicitly targets Africa, 15+ GW managed) · Custom financial engine for SA-specific metrics (Section 12B, DSCR, CEIT modelling)",
     opportunities: [
       {
         name: "Real-Time Portfolio IRR Tracker",
-        description: "Live IRR, NPV, and DSCR based on actual cash flows — not projections. Compares actuals vs. business plan. Early warning when metrics trend below threshold. Integrates Monte Carlo confidence bands (deterministic 15.2% project IRR; stochastic P10: −1.5%, P50: 4.0%, P90: 9.7%).",
+        description: "Live IRR, NPV, and DSCR based on actual cash flows — not projections. Compares actuals against the business plan with early warnings when metrics trend below threshold. Integrates Monte Carlo confidence bands (deterministic 15.2% project IRR; stochastic P10: -1.5%, P50: 4.0%, P90: 9.7%).",
         impact: "Massive investor confidence — transforms fundraising conversations",
-        tools: "Custom financial engine, real-time billing/Netvendor feeds, React dashboard",
+        tools: "Custom financial engine, real-time billing/Netvendor feeds, web dashboard",
         cost: "ZAR 200–350K build",
         priority: "high"
       },
       {
         name: "Automated Investor Reporting",
-        description: "Monthly reports auto-generated: portfolio performance, revenue breakdown, maintenance events, ESG/carbon metrics, cash flow vs. projections. White-labelled per investor class (DFI, equity, bond holders). Includes carbon credits generated and EV charging revenue.",
+        description: "Monthly reports generated automatically: portfolio performance, revenue breakdown, maintenance events, ESG/carbon metrics, and cash flow vs. projections. Branded per investor class (DFI, equity, bond holders). Includes carbon credits generated and EV charging revenue.",
         impact: "Eliminates 40+ hours/month manual reporting",
         tools: "Automated report generation, data pipeline, email distribution",
         cost: "ZAR 120–200K build",
@@ -198,9 +193,9 @@ const pillars = [
       },
       {
         name: "Scenario & Exit Modelling Engine",
-        description: "Interactive 'what if' tool: add 10 sites? Tariff growth slows? Refinance at Year 5? Model CEIT spin-off at Year 7 vs. trade sale at Year 10 (8-9x EBITDA, ~ZAR 320-380M). Live recalculation of all metrics. Stress-test any assumption.",
+        description: "Interactive 'what if' tool: add 10 sites? Tariff growth slows? Refinance at Year 5? Model CEIT spin-off at Year 7 vs. trade sale at Year 10 (8-9x EBITDA, ~ZAR 320-380M). Recalculates all metrics in real-time. Stress-test any assumption.",
         impact: "Accelerates strategic decisions, powers investor conversations",
-        tools: "Custom financial model API, interactive React frontend",
+        tools: "Custom financial model, interactive web dashboard",
         cost: "ZAR 150–250K build",
         priority: "low"
       }
@@ -217,12 +212,12 @@ const teamPhases = {
       cost: "ZAR 8.2M",
       roles: [
         { role: "Managing Director", count: 1, cost: 1200, note: "Strategy + investor relations + first closes" },
-        { role: "Data Engineer", count: 1, cost: 800, note: "Builds edge+cloud infrastructure" },
-        { role: "AI Developer", count: 1, cost: 900, note: "ML models, digital twin, site assessment engine" },
+        { role: "Data Engineer", count: 1, cost: 800, note: "Builds on-site + cloud infrastructure" },
+        { role: "AI Developer", count: 1, cost: 900, note: "AI models, digital twin, site assessment engine" },
         { role: "Project Managers", count: 2, cost: 1200, note: "10 pilot sites — AI handles scheduling" },
         { role: "Sales / BD", count: 2, cost: 1000, note: "Pipeline building while AI qualifies leads" },
         { role: "Field Technicians", count: 4, cost: 1600, note: "Installation + first maintenance baselines" },
-        { role: "Metering Specialist", count: 1, cost: 600, note: "Netvendor integration + edge meter setup" },
+        { role: "Metering Specialist", count: 1, cost: 600, note: "Netvendor integration + on-site meter setup" },
       ]
     },
     {
@@ -232,7 +227,7 @@ const teamPhases = {
       cost: "ZAR 9.5M",
       roles: [
         { role: "Managing Director", count: 1, cost: 1200, note: "DFI relationships + Round 2 fundraising" },
-        { role: "Data Engineer", count: 1, cost: 800, note: "Maintains automation stack + edge fleet" },
+        { role: "Data Engineer", count: 1, cost: 800, note: "Maintains automation platform + on-site devices" },
         { role: "AI Developer", count: 1, cost: 900, note: "Models trained on 10-site pilot data" },
         { role: "Project Managers", count: 3, cost: 1800, note: "AI-assisted — each manages 10+ sites" },
         { role: "Sales / BD", count: 3, cost: 1500, note: "AI proposals flowing — they close deals" },
@@ -247,7 +242,7 @@ const teamPhases = {
       cost: "ZAR 10.5M",
       roles: [
         { role: "Managing Director", count: 1, cost: 1200, note: "CEIT feasibility + Phase 2 planning" },
-        { role: "Full-Stack Engineers", count: 2, cost: 1600, note: "Replaced separate data/AI roles — stack is mature" },
+        { role: "Full-Stack Engineers", count: 2, cost: 1600, note: "Replaced separate data/AI roles — platform is mature" },
         { role: "Ops Manager", count: 1, cost: 700, note: "Digital twin monitors 50 sites from one desk" },
         { role: "Project Managers", count: 4, cost: 2400, note: "Each manages 12+ sites via automation" },
         { role: "Sales / BD", count: 3, cost: 1500, note: "Expansion engine generating organic leads" },
@@ -273,7 +268,7 @@ const phases = [
       "Monday.com as central CRM + project hub",
       "Make.com for workflow automation (connects everything)",
       "Xero/QuickBooks for automated financial tracking",
-      "Cloud infrastructure (AWS/Vercel) + edge device procurement",
+      "Cloud infrastructure + on-site device procurement",
       "Map every manual process → identify 5 highest-ROI automations",
       "Engage SmartHelio / Open Access Energy for platform evaluation"
     ],
@@ -300,15 +295,15 @@ const phases = [
     duration: "Months 4–8",
     focus: "Build the operational engine as first 10 sites go live",
     tasks: [
-      "Deploy edge compute + IoT monitoring across pilot sites",
+      "Deploy on-site processing hardware + real-time monitoring across pilot sites",
       "Build digital twin dashboard (SmartHelio or custom)",
       "Netvendor billing automation pipeline (Volter evaluation)",
-      "Predictive maintenance ML (rule-based initially, evolves with data)",
+      "Predictive maintenance AI (rule-based initially, evolves with data)",
       "Regulatory compliance automation workflows",
-      "Begin VPP architecture and virtual wheeling partner integration"
+      "Begin virtual power plant design and virtual wheeling partner integration"
     ],
     cost: "ZAR 400–600K",
-    outcome: "Pilot sites at 70% less manual intervention. Edge infrastructure proven."
+    outcome: "Pilot sites at 70% less manual intervention. On-site infrastructure proven."
   },
   {
     phase: "Phase 3 — Trading & Client Platform",
@@ -330,7 +325,7 @@ const phases = [
     duration: "Months 10–16",
     focus: "Refine with real data, prepare 25→50 expansion",
     tasks: [
-      "Train ML models on 10-site pilot data (sizing, maintenance, yield)",
+      "Train AI models on 10-site pilot data (sizing, maintenance, yield)",
       "Optimise billing/collection based on actuals vs. projections",
       "Scenario + CEIT exit modelling engine",
       "EV charging rollout across high-parking sites",
@@ -491,16 +486,10 @@ export default function OpsModel() {
 
                     {isOpen && (
                       <div className="fade-in" style={{ padding: "0 20px 20px" }}>
-                        {/* Current vs Vision */}
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 16 }}>
-                          <div style={{ background: "#1A0A0A", border: "1px solid #2D1515", borderRadius: 6, padding: 14 }}>
-                            <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1.5px", color: "#F87171", marginBottom: 6 }}>CURRENT PLAN</div>
-                            <div style={{ fontSize: 12, lineHeight: 1.65, color: text2 }}>{p.currentState}</div>
-                          </div>
-                          <div style={{ background: "#0A1A14", border: `1px solid ${p.accent}22`, borderRadius: 6, padding: 14 }}>
-                            <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1.5px", color: p.accent, marginBottom: 6 }}>ADVANCED VISION</div>
-                            <div style={{ fontSize: 12, lineHeight: 1.65, color: text2 }}>{p.vision}</div>
-                          </div>
+                        {/* Overview */}
+                        <div style={{ background: bg, border: `1px solid ${p.accent}22`, borderRadius: 6, padding: 14, marginBottom: 16 }}>
+                          <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1.5px", color: p.accent, marginBottom: 6 }}>OVERVIEW</div>
+                          <div style={{ fontSize: 12, lineHeight: 1.65, color: text2 }}>{p.description}</div>
                         </div>
 
                         {/* Partners */}

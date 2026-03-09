@@ -27,7 +27,7 @@ export default function App() {
               UCSA ASSET COMPANY
             </div>
             <div style={{ fontFamily: t.fontHead, fontSize: 18, fontWeight: 700, color: t.text1 }}>
-              Integrated Business Plan <span style={{ color: t.accentLime }}>V4</span>
+              Integrated Business Plan
             </div>
             <div style={{ fontFamily: t.fontMono, fontSize: 10, color: t.text2, marginTop: 2 }}>
               March 2026 · Western & Southern Cape · Confidential
