@@ -2,7 +2,8 @@ import Anthropic from "@anthropic-ai/sdk";
 import { Redis } from "@upstash/redis";
 import { Resend } from "resend";
 import { readFileSync } from "fs";
-import { join } from "path";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const redis = new Redis({
@@ -39,8 +40,9 @@ async function notifyError(error, context) {
   }
 }
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const businessPlanMd = readFileSync(
-  join(process.cwd(), "src/data/businessPlan.md"),
+  join(__dirname, "../src/data/businessPlan.md"),
   "utf-8"
 );
 
