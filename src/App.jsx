@@ -2,6 +2,7 @@ import { useState } from "react";
 import { theme as t } from "./theme";
 import OpsModel from "./OpsModel";
 import InvestmentCase from "./InvestmentCase";
+import ClientPortfolio from "./ClientPortfolio";
 import ChatPanel from "./ChatPanel";
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
             {[
               { id: "investment", label: "INVESTMENT CASE" },
               { id: "ops", label: "OPS MODEL" },
+              { id: "portfolio", label: "CLIENT PORTFOLIO" },
             ].map(m => (
               <button
                 key={m.id}
@@ -63,7 +65,9 @@ export default function App() {
         </div>
       </div>
 
-      {mode === "investment" ? <InvestmentCase /> : <OpsModel />}
+      {mode === "investment" && <InvestmentCase />}
+      {mode === "ops" && <OpsModel />}
+      {mode === "portfolio" && <ClientPortfolio />}
       <ChatPanel />
     </div>
   );
