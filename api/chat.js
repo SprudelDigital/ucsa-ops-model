@@ -69,12 +69,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  try {
-    const { sessionId, name, message, history } = req.body;
+  const { sessionId, name, message, history } = req.body || {};
 
-    if (!sessionId || !name || !message) {
-      return res.status(400).json({ error: "Missing required fields" });
-    }
+  if (!sessionId || !name || !message) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+
+  try {
 
     const session = await redis.get(`session:${sessionId}`);
     if (session && session.messages && session.messages.length >= MAX_MESSAGES * 2) {
