@@ -5,7 +5,10 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-const redis = Redis.fromEnv();
+const redis = new Redis({
+  url: process.env.KV_REST_API_URL,
+  token: process.env.KV_REST_API_TOKEN,
+});
 const resend = new Resend(process.env.RESEND_API_KEY);
 const NOTIFY_EMAILS = (process.env.NOTIFY_EMAILS || "").split(",").map((e) => e.trim()).filter(Boolean);
 
