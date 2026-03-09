@@ -55,7 +55,7 @@ export default async function handler(req, res) {
     ];
 
     const response = await anthropic.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-4-6",
       max_tokens: 1024,
       system: [
         {
@@ -85,7 +85,11 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ response: assistantMessage });
   } catch (error) {
-    console.error("Chat API error:", error);
-    return res.status(500).json({ error: "Internal server error" });
+    console.error("Chat API error:", error?.status, error?.message || error);
+    const status = error?.status || 500;
+    const msg = error?.status
+      ? `API error: ${error.message}`
+      : "Internal server error";
+    return res.status(status).json({ error: msg });
   }
 }
