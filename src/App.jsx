@@ -2,6 +2,7 @@ import { useState } from "react";
 import { theme as t } from "./theme";
 import OpsModel from "./OpsModel";
 import InvestmentCase from "./InvestmentCase";
+import ChatPanel from "./ChatPanel";
 
 export default function App() {
   const [mode, setMode] = useState("investment");
@@ -63,6 +64,7 @@ export default function App() {
       </div>
 
       {mode === "investment" ? <InvestmentCase /> : <OpsModel />}
+      <ChatPanel />
     </div>
   );
 }
