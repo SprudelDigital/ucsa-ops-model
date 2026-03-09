@@ -1,10 +1,40 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { Redis } from "@upstash/redis";
+import { Resend } from "resend";
 import { readFileSync } from "fs";
 import { join } from "path";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const redis = Redis.fromEnv();
+const resend = new Resend(process.env.RESEND_API_KEY);
+const NOTIFY_EMAILS = (process.env.NOTIFY_EMAILS || "").split(",").map((e) => e.trim()).filter(Boolean);
+
+const USER_FRIENDLY_MESSAGE =
+  "I'm taking a quick coffee break — please try again in a moment. If this keeps happening, the team has already been notified.";
+
+async function notifyError(error, context) {
+  if (NOTIFY_EMAILS.length === 0) return;
+  try {
+    await resend.emails.send({
+      from: "UCSA Chat <onboarding@resend.dev>",
+      to: NOTIFY_EMAILS,
+      subject: `⚠️ UCSA Chat Error — ${error?.status || "Unknown"}`,
+      html: `
+        <div style="font-family: 'Inter', Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+          <h2 style="color: #ef4444; border-bottom: 2px solid #ef4444; padding-bottom: 12px;">Chat API Error</h2>
+          <table style="font-size: 14px; margin-bottom: 24px;">
+            <tr><td style="padding: 4px 16px 4px 0; color: #666;">Time:</td><td>${new Date().toISOString()}</td></tr>
+            <tr><td style="padding: 4px 16px 4px 0; color: #666;">Investor:</td><td><strong>${context.name || "Unknown"}</strong></td></tr>
+            <tr><td style="padding: 4px 16px 4px 0; color: #666;">Status:</td><td>${error?.status || "N/A"}</td></tr>
+            <tr><td style="padding: 4px 16px 4px 0; color: #666;">Error:</td><td style="color: #ef4444;">${error?.message || String(error)}</td></tr>
+            <tr><td style="padding: 4px 16px 4px 0; color: #666;">User message:</td><td>${context.message || "N/A"}</td></tr>
+          </table>
+        </div>`,
+    });
+  } catch (emailErr) {
+    console.error("Failed to send error notification:", emailErr);
+  }
+}
 
 const businessPlanMd = readFileSync(
   join(process.cwd(), "src/data/businessPlan.md"),
@@ -86,10 +116,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ response: assistantMessage });
   } catch (error) {
     console.error("Chat API error:", error?.status, error?.message || error);
-    const status = error?.status || 500;
-    const msg = error?.status
-      ? `API error: ${error.message}`
-      : "Internal server error";
-    return res.status(status).json({ error: msg });
+    await notifyError(error, { name, message });
+    return res.status(200).json({ response: USER_FRIENDLY_MESSAGE });
   }
 }

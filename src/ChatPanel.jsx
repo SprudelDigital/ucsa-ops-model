@@ -85,7 +85,6 @@ export default function ChatPanel() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
-  const [error, setError] = useState("");
   const [ended, setEnded] = useState(false);
   const [showPulse, setShowPulse] = useState(true);
   const [btnHover, setBtnHover] = useState(false);
@@ -153,7 +152,6 @@ export default function ChatPanel() {
     if (!trimmed || sending) return;
 
     setInput("");
-    setError("");
     const userMsg = { role: "user", content: trimmed };
     setMessages((prev) => [...prev, userMsg]);
     setSending(true);
@@ -170,15 +168,17 @@ export default function ChatPanel() {
         }),
       });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || `Request failed (${res.status})`);
-      }
-
       const data = await res.json();
       setMessages((prev) => [...prev, { role: "assistant", content: data.response }]);
-    } catch (err) {
-      setError(err.message || "Something went wrong. Please try again.");
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            "I'm taking a quick coffee break — please try again in a moment. If this keeps happening, the team has already been notified.",
+        },
+      ]);
     } finally {
       setSending(false);
       inputRef.current?.focus();
@@ -487,21 +487,6 @@ export default function ChatPanel() {
                           />
                         ))}
                       </div>
-                    </div>
-                  )}
-
-                  {/* Error display */}
-                  {error && (
-                    <div style={{
-                      padding: "10px 14px",
-                      borderRadius: 8,
-                      background: "#ef444420",
-                      border: "1px solid #ef444440",
-                      fontSize: 12,
-                      color: "#ef4444",
-                      marginBottom: 12,
-                    }}>
-                      {error}
                     </div>
                   )}
 
