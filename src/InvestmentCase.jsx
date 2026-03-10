@@ -17,7 +17,7 @@ import {
 function SectionLabel({ children, mt = 32 }) {
   return (
     <div style={{
-      fontFamily: t.fontMono, fontSize: 9, letterSpacing: "3px",
+      fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2.5px",
       color: t.text2, marginBottom: 12, marginTop: mt,
     }}>
       {children}
@@ -45,9 +45,9 @@ function MetricRow({ label, value, lime, cyan }) {
       display: "flex", justifyContent: "space-between", alignItems: "center",
       padding: "8px 0", borderBottom: "1px solid " + t.border,
     }}>
-      <span style={{ fontFamily: t.fontMono, fontSize: 10, color: t.text2 }}>{label}</span>
+      <span style={{ fontFamily: t.fontMono, fontSize: 11, color: t.text2 }}>{label}</span>
       <span style={{
-        fontFamily: t.fontMono, fontSize: 12, fontWeight: 700,
+        fontFamily: t.fontMono, fontSize: 13, fontWeight: 600,
         color: lime ? t.accentLime : cyan ? t.accentCyan : t.text1,
       }}>{value}</span>
     </div>
@@ -62,17 +62,17 @@ function SummaryTab() {
       <SectionLabel mt={0}>THE ASK · MARCH 2026</SectionLabel>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, marginBottom: 32 }}>
         <Card>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.text2, marginBottom: 8 }}>EQUITY</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.text2, marginBottom: 8 }}>EQUITY</div>
           <div style={{ fontFamily: t.fontMono, fontSize: 26, fontWeight: 700, color: t.text1, marginBottom: 6 }}>{executiveSummary.theAsk.equity}</div>
           <div style={{ fontSize: 12, color: t.text2 }}>{executiveSummary.theAsk.equityPurpose}</div>
         </Card>
         <Card>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.text2, marginBottom: 8 }}>BRIDGE FACILITY</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.text2, marginBottom: 8 }}>BRIDGE FACILITY</div>
           <div style={{ fontFamily: t.fontMono, fontSize: 26, fontWeight: 700, color: t.text1, marginBottom: 6 }}>{executiveSummary.theAsk.bridge}</div>
           <div style={{ fontSize: 12, color: t.text2 }}>{executiveSummary.theAsk.bridgePurpose}</div>
         </Card>
         <Card highlight>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>TOTAL RAISE</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>TOTAL RAISE</div>
           <div style={{ fontFamily: t.fontMono, fontSize: 26, fontWeight: 700, color: t.accentLime, marginBottom: 6 }}>{executiveSummary.theAsk.total}</div>
           <div style={{ fontSize: 12, color: t.text2 }}>ZAR 74–79M balance via senior debt + mezzanine</div>
         </Card>
@@ -85,10 +85,10 @@ function SummaryTab() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
               <div>
                 <div style={{ fontFamily: t.fontHead, fontSize: 14, fontWeight: 700, color: t.text1 }}>{s.label}</div>
-                <div style={{ fontFamily: t.fontMono, fontSize: 10, color: s.highlight ? t.accentBlue : t.text2, marginTop: 2 }}>WACC {s.wacc}</div>
+                <div style={{ fontFamily: t.fontMono, fontSize: 12, color: s.highlight ? t.accentBlue : t.text2, marginTop: 2 }}>WACC {s.wacc}</div>
               </div>
               {s.highlight && (
-                <span style={{ background: t.accentBlue, color: "#fff", fontSize: 9, fontWeight: 700, letterSpacing: "1px", padding: "3px 8px", borderRadius: 3 }}>TARGET</span>
+                <span style={{ background: t.accentBlue, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "1px", padding: "3px 8px", borderRadius: 3 }}>TARGET</span>
               )}
             </div>
             <MetricRow label="PROJECT IRR" value={s.projectIRR} />
@@ -137,19 +137,19 @@ function MarketTab() {
       <SectionLabel>TAM → SAM → SOM (PHASE 1)</SectionLabel>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 32px 1fr 32px 1fr", alignItems: "center", marginBottom: 32 }}>
         <Card>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>{tam.label}</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>{tam.label}</div>
           <div style={{ fontFamily: t.fontMono, fontSize: 22, fontWeight: 700, color: t.text1, marginBottom: 8 }}>{tam.value}</div>
           <div style={{ fontSize: 12, color: t.text2, lineHeight: 1.5 }}>{tam.note}</div>
         </Card>
         <div style={{ textAlign: "center", fontFamily: t.fontMono, fontSize: 20, color: t.accentLime }}>→</div>
         <Card>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>{sam.label}</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>{sam.label}</div>
           <div style={{ fontFamily: t.fontMono, fontSize: 22, fontWeight: 700, color: t.text1, marginBottom: 8 }}>{sam.value}</div>
           <div style={{ fontSize: 12, color: t.text2, lineHeight: 1.5 }}>{sam.note}</div>
         </Card>
         <div style={{ textAlign: "center", fontFamily: t.fontMono, fontSize: 20, color: t.accentLime }}>→</div>
         <Card>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>{som.label}</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.accentLime, marginBottom: 8 }}>{som.label}</div>
           <div style={{ fontFamily: t.fontMono, fontSize: 22, fontWeight: 700, color: t.text1, marginBottom: 8 }}>{som.value}</div>
           <div style={{ fontSize: 12, color: t.text2, lineHeight: 1.5 }}>{som.note}</div>
         </Card>
@@ -177,7 +177,7 @@ function MarketTab() {
           <Card key={seg.label}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
               <div style={{ fontFamily: t.fontHead, fontSize: 14, fontWeight: 700, color: t.text1 }}>{seg.label}</div>
-              <span style={{ background: t.accentLime + "22", color: t.accentLime, fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", padding: "3px 8px", borderRadius: 3 }}>{seg.count} sites</span>
+              <span style={{ background: t.accentLime + "22", color: t.accentLime, fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", padding: "3px 8px", borderRadius: 3 }}>{seg.count} sites</span>
             </div>
             <p style={{ fontSize: 12, color: t.text2, lineHeight: 1.6, marginBottom: 14 }}>{seg.description}</p>
             <div style={{ borderTop: "1px solid " + t.border, paddingTop: 12 }}>
@@ -199,7 +199,7 @@ function ModelTab() {
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "hidden", marginBottom: 32 }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 90px", padding: "10px 18px", borderBottom: "1px solid " + t.border }}>
           {["Revenue Stream", "Per Small Site (Y1)", "Portfolio Y5 (50 sites)", "Share"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {businessModelData.revenueStreams.map((row, i) => (
@@ -216,7 +216,7 @@ function ModelTab() {
               <div style={{ flex: 1, height: 4, background: t.border, borderRadius: 2 }}>
                 <div style={{ width: row.pct + "%", height: "100%", background: t.accentLime, borderRadius: 2 }} />
               </div>
-              <span style={{ fontFamily: t.fontMono, fontSize: 10, color: t.accentLime, minWidth: 28 }}>{row.pct}%</span>
+              <span style={{ fontFamily: t.fontMono, fontSize: 12, color: t.accentLime, minWidth: 28 }}>{row.pct}%</span>
             </div>
           </div>
         ))}
@@ -280,7 +280,7 @@ function CompetitiveTab() {
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "auto", marginBottom: 32 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.2fr 2fr 1fr 1.2fr 1.5fr", padding: "10px 18px", borderBottom: "1px solid " + t.border, minWidth: 700 }}>
           {["Competitor", "Model", "Funding", "Threat to UCSA", "UCSA Gap"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {competitiveData.competitors.map((c, i) => (
@@ -296,7 +296,7 @@ function CompetitiveTab() {
             </div>
             <span style={{ fontSize: 12, color: t.text2, lineHeight: 1.5 }}>{c.model}</span>
             <span style={{ fontSize: 12, color: t.text2 }}>{c.funding}</span>
-            <span style={{ fontFamily: t.fontMono, fontSize: 10, color: threatColor(c.threat), lineHeight: 1.5 }}>{c.threat}</span>
+            <span style={{ fontFamily: t.fontMono, fontSize: 12, color: threatColor(c.threat), lineHeight: 1.5 }}>{c.threat}</span>
             <span style={{ fontSize: 12, color: t.accentCyan, lineHeight: 1.5 }}>{c.gap}</span>
           </div>
         ))}
@@ -309,11 +309,11 @@ function CompetitiveTab() {
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
         <Card>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.accentCyan, marginBottom: 10 }}>DEFENSIVE STRATEGY</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.accentCyan, marginBottom: 10 }}>DEFENSIVE STRATEGY</div>
           <p style={{ fontSize: 13, color: t.text2, lineHeight: 1.7, margin: 0 }}>{competitiveData.defense}</p>
         </Card>
         <Card highlight>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.accentLime, marginBottom: 10 }}>CONVERGENCE RISK</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.accentLime, marginBottom: 10 }}>CONVERGENCE RISK</div>
           <p style={{ fontSize: 13, color: t.text2, lineHeight: 1.7, margin: 0 }}>{competitiveData.convergenceRisk}</p>
         </Card>
       </div>
@@ -362,7 +362,7 @@ function FinancialsTab() {
           { label: "DSCR Y5", value: active.dscr },
         ].map(m => (
           <div key={m.label} style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, padding: "14px 16px" }}>
-            <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1.5px", color: t.text2, marginBottom: 6 }}>{m.label}</div>
+            <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1.5px", color: t.text2, marginBottom: 6 }}>{m.label}</div>
             <div style={{ fontFamily: t.fontMono, fontSize: 18, fontWeight: 700, color: m.lime ? t.accentLime : m.cyan ? t.accentCyan : t.text1 }}>{m.value}</div>
           </div>
         ))}
@@ -373,9 +373,9 @@ function FinancialsTab() {
         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 700 }}>
           <thead>
             <tr style={{ borderBottom: "1px solid " + t.border }}>
-              <th style={{ padding: "10px 18px", textAlign: "left", fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2, fontWeight: 400, minWidth: 160 }}>LINE ITEM</th>
+              <th style={{ padding: "10px 18px", textAlign: "left", fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2, fontWeight: 400, minWidth: 160 }}>LINE ITEM</th>
               {years.map(y => (
-                <th key={y} style={{ padding: "10px 12px", textAlign: "right", fontFamily: t.fontMono, fontSize: 9, color: t.text2, fontWeight: 400 }}>{y}</th>
+                <th key={y} style={{ padding: "10px 12px", textAlign: "right", fontFamily: t.fontMono, fontSize: 11, color: t.text2, fontWeight: 400 }}>{y}</th>
               ))}
             </tr>
           </thead>
@@ -415,7 +415,7 @@ function FinancialsTab() {
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "hidden", marginBottom: 32 }}>
         <div style={{ display: "grid", gridTemplateColumns: "60px 80px 100px 80px 130px 110px 1fr", padding: "10px 18px", borderBottom: "1px solid " + t.border }}>
           {["Year", "Sites", "Cumulative", "Staff", "Staff Cost", "CAPEX", "Note"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {financialsData.deploymentSchedule.map((row, i) => (
@@ -441,7 +441,7 @@ function FinancialsTab() {
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "hidden", marginBottom: 14 }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", padding: "10px 18px", borderBottom: "1px solid " + t.border }}>
           {["Metric", "Mean", "P10", "P50", "P90"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {financialsData.monteCarlo.stochastic.map((row, i) => (
@@ -469,13 +469,13 @@ function FinancialsTab() {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8 }}>
         {financialsData.tax12B.batches.map((b, i) => (
           <div key={i} style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, padding: "14px 16px" }}>
-            <div style={{ fontFamily: t.fontMono, fontSize: 9, color: t.text2, marginBottom: 6 }}>{b.batch}</div>
+            <div style={{ fontFamily: t.fontMono, fontSize: 11, color: t.text2, marginBottom: 6 }}>{b.batch}</div>
             <div style={{ fontFamily: t.fontMono, fontSize: 13, fontWeight: 700, color: t.text1, marginBottom: 4 }}>{b.deduction}</div>
             <div style={{ fontFamily: t.fontMono, fontSize: 11, color: t.accentLime }}>Shield: {b.shield}</div>
           </div>
         ))}
         <Card highlight>
-          <div style={{ fontFamily: t.fontMono, fontSize: 9, color: t.accentLime, marginBottom: 6 }}>TOTAL SHIELD</div>
+          <div style={{ fontFamily: t.fontMono, fontSize: 11, color: t.accentLime, marginBottom: 6 }}>TOTAL SHIELD</div>
           <div style={{ fontFamily: t.fontMono, fontSize: 13, fontWeight: 700, color: t.accentLime }}>{financialsData.tax12B.totalShield}</div>
         </Card>
       </div>
@@ -491,7 +491,7 @@ function GTMTab() {
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "hidden", marginBottom: 32 }}>
         <div style={{ display: "grid", gridTemplateColumns: "2.5fr 1fr 1.2fr 1.5fr", padding: "10px 18px", borderBottom: "1px solid " + t.border }}>
           {["Stage", "Count", "Conversion", "Source"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {gtmData.conversionFunnel.map((step, i) => (
@@ -553,7 +553,7 @@ function GTMTab() {
             <span style={{
               background: (priorityColor[target.priority] || t.text2) + "22",
               color: priorityColor[target.priority] || t.text2,
-              fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px",
+              fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px",
               padding: "4px 10px", borderRadius: 3, whiteSpace: "nowrap",
             }}>
               {target.priority}
@@ -573,11 +573,11 @@ function TeamTab() {
   };
   return (
     <div className="fade-in">
-      <SectionLabel mt={0}>MILESTONE-LINKED HIRING (CRITICAL STRUCTURAL FIX)</SectionLabel>
+      <SectionLabel mt={0}>MILESTONE-LINKED HIRING</SectionLabel>
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "hidden", marginBottom: 14 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.5fr 60px 110px 2fr 1fr", padding: "10px 18px", borderBottom: "1px solid " + t.border }}>
           {["Milestone", "Staff", "Cost", "Key Roles Added", "Impact"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {teamData.milestoneHiring.map((row, i) => (
@@ -599,7 +599,7 @@ function TeamTab() {
         <p style={{ fontFamily: t.fontMono, fontSize: 12, color: t.accentLime, margin: 0 }}>◈ {teamData.hiringImpact}</p>
       </div>
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, padding: "14px 18px", marginBottom: 32 }}>
-        <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "2px", color: t.text2, marginBottom: 8 }}>ADVISORY BOARD</div>
+        <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2px", color: t.text2, marginBottom: 8 }}>ADVISORY BOARD</div>
         <p style={{ fontSize: 13, color: t.text2, lineHeight: 1.6, margin: 0 }}>{teamData.advisory}</p>
       </div>
 
@@ -607,7 +607,7 @@ function TeamTab() {
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "28px 1.5fr 70px 70px 48px 2fr 1.2fr", padding: "10px 14px", borderBottom: "1px solid " + t.border, minWidth: 800 }}>
           {["#", "Risk", "Prob", "Impact", "Score", "Mitigation", "Trigger"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {riskData.map((risk, i) => (
@@ -617,10 +617,10 @@ function TeamTab() {
             borderBottom: i < riskData.length - 1 ? "1px solid " + t.border : "none",
             alignItems: "start", gap: 8, minWidth: 800,
           }}>
-            <span style={{ fontFamily: t.fontMono, fontSize: 10, color: t.text2 }}>{risk.id}</span>
+            <span style={{ fontFamily: t.fontMono, fontSize: 12, color: t.text2 }}>{risk.id}</span>
             <span style={{ fontSize: 12, fontWeight: 600, color: t.text1, lineHeight: 1.4 }}>{risk.risk}</span>
-            <span style={{ fontFamily: t.fontMono, fontSize: 10, color: t.text2 }}>{risk.prob}</span>
-            <span style={{ fontFamily: t.fontMono, fontSize: 10, color: t.text2 }}>{risk.impact}</span>
+            <span style={{ fontFamily: t.fontMono, fontSize: 12, color: t.text2 }}>{risk.prob}</span>
+            <span style={{ fontFamily: t.fontMono, fontSize: 12, color: t.text2 }}>{risk.impact}</span>
             <span style={{ fontFamily: t.fontMono, fontSize: 14, fontWeight: 700, color: scoreColor(risk.score) }}>{risk.score}</span>
             <span style={{ fontSize: 11, color: t.text2, lineHeight: 1.5 }}>{risk.mitigation}</span>
             <span style={{ fontSize: 11, color: t.text2, lineHeight: 1.5, fontStyle: "italic" }}>{risk.trigger}</span>
@@ -639,11 +639,11 @@ function ExitTab() {
         {exitData.options.map(opt => (
           <Card key={opt.label} blue={opt.highlight}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-              <span style={{ fontFamily: t.fontMono, fontSize: 10, color: t.text2 }}>{opt.label}</span>
-              {opt.highlight && <span style={{ background: t.accentBlue, color: "#fff", fontSize: 9, fontWeight: 700, letterSpacing: "1px", padding: "3px 8px", borderRadius: 3 }}>PREFERRED</span>}
+              <span style={{ fontFamily: t.fontMono, fontSize: 12, color: t.text2 }}>{opt.label}</span>
+              {opt.highlight && <span style={{ background: t.accentBlue, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "1px", padding: "3px 8px", borderRadius: 3 }}>PREFERRED</span>}
             </div>
             <div style={{ fontFamily: t.fontHead, fontSize: 20, fontWeight: 700, color: t.text1, marginBottom: 4 }}>{opt.title}</div>
-            <div style={{ fontFamily: t.fontMono, fontSize: 10, color: opt.highlight ? t.accentBlue : t.text2, marginBottom: 16 }}>{opt.timing} · {opt.multiple}</div>
+            <div style={{ fontFamily: t.fontMono, fontSize: 12, color: opt.highlight ? t.accentBlue : t.text2, marginBottom: 16 }}>{opt.timing} · {opt.multiple}</div>
             <div style={{ fontFamily: t.fontMono, fontSize: 24, fontWeight: 700, color: t.accentLime, marginBottom: 16 }}>{opt.value}</div>
             <p style={{ fontSize: 12, color: t.text2, lineHeight: 1.6, margin: 0 }}>{opt.note}</p>
           </Card>
@@ -654,7 +654,7 @@ function ExitTab() {
       <div style={{ background: t.surface, border: "1px solid " + t.border, borderRadius: 8, overflow: "hidden", marginBottom: 32 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1.5fr 1fr 1fr 1fr 70px", padding: "10px 18px", borderBottom: "1px solid " + t.border }}>
           {["Scenario", "Senior Debt", "Equity", "Mezz/Bridge", "Grants", "WACC"].map(h => (
-            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "1px", color: t.text2 }}>{h}</span>
+            <span key={h} style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "1px", color: t.text2 }}>{h}</span>
           ))}
         </div>
         {exitData.capitalStructure.scenarios.map((s, i) => (
@@ -680,7 +680,7 @@ function ExitTab() {
           <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", background: t.surface, border: "1px solid " + t.border, borderRadius: 8, padding: "14px 18px" }}>
             <div style={{
               background: t.accentLime, color: t.bg,
-              fontFamily: t.fontMono, fontSize: 10, fontWeight: 700,
+              fontFamily: t.fontMono, fontSize: 12, fontWeight: 700,
               width: 24, height: 24, borderRadius: "50%",
               display: "flex", alignItems: "center", justifyContent: "center",
               flexShrink: 0, marginTop: 1,
@@ -717,8 +717,8 @@ export default function InvestmentCase() {
             <button key={tb.id} onClick={() => setTab(tb.id)} style={{
               padding: "13px 20px",
               border: "none", background: "transparent", cursor: "pointer",
-              fontFamily: t.fontMono, fontSize: 11, letterSpacing: "0.5px",
-              fontWeight: tab === tb.id ? 700 : 400,
+              fontFamily: t.fontMono, fontSize: 12, letterSpacing: "0.5px",
+              fontWeight: tab === tb.id ? 600 : 400,
               color: tab === tb.id ? t.accentLime : t.text2,
               borderBottom: tab === tb.id ? ("2px solid " + t.accentLime) : "2px solid transparent",
               whiteSpace: "nowrap", transition: "all 0.15s",

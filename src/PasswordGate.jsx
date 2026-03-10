@@ -30,7 +30,7 @@ export default function PasswordGate({ children }) {
       alignItems: "center",
       justifyContent: "center",
       background: "#080E1A",
-      fontFamily: "'Inter', sans-serif",
+      fontFamily: "'DM Sans', sans-serif",
     }}>
       <div style={{
         background: "#0D1526",

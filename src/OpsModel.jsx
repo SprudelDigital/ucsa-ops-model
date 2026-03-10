@@ -242,7 +242,7 @@ const teamPhases = {
       cost: "ZAR 10.5M",
       roles: [
         { role: "Managing Director", count: 1, cost: 1200, note: "CEIT feasibility + Phase 2 planning" },
-        { role: "Full-Stack Engineers", count: 2, cost: 1600, note: "Replaced separate data/AI roles — platform is mature" },
+        { role: "Full-Stack Engineers", count: 2, cost: 1600, note: "Maintain and extend the mature AI + data platform" },
         { role: "Ops Manager", count: 1, cost: 700, note: "Digital twin monitors 50 sites from one desk" },
         { role: "Project Managers", count: 4, cost: 2400, note: "Each manages 12+ sites via automation" },
         { role: "Sales / BD", count: 3, cost: 1500, note: "Expansion engine generating organic leads" },
@@ -252,9 +252,9 @@ const teamPhases = {
     }
   ],
   comparison: {
-    traditional: { label: "Traditional Model (20 people)", cost: "ZAR 11.5M/yr" },
+    traditional: { label: "Industry Benchmark (20 people)", cost: "ZAR 11.5M/yr" },
     ucsa_y3: { label: "UCSA AI-Augmented (18 people, Y3)", cost: "ZAR 10.5M/yr" },
-    ucsa_equivalent: { label: "Equivalent traditional output", cost: "~ZAR 16M/yr" },
+    ucsa_equivalent: { label: "Equivalent output capacity", cost: "~ZAR 16M/yr" },
     effective_savings: "ZAR 5.5M/yr effective leverage (34%)"
   }
 };
@@ -352,7 +352,7 @@ const insights = [
   },
   {
     title: "Capital Discipline Over Growth Velocity",
-    content: "Sunnova ($10.67B debt, bankrupt June 2025), SunPower (bankrupt 2024), Solar Mosaic (bankrupt 2025) — all failed from overleveraged growth. The consultant's advice to slow Y1 to 10 sites is correct. Reference installs generate bankable data, reduce peak liquidity draw by ~ZAR 12M, and prove the AI platform before scaling. The Monte Carlo shows <4% negative NPV probability — don't erode that margin by over-running Year 1."
+    content: "Sunnova ($10.67B debt, bankrupt June 2025), SunPower (bankrupt 2024), Solar Mosaic (bankrupt 2025) — all failed from overleveraged growth. UCSA's phased approach starts with 10 reference sites in Year 1. These generate bankable performance data, reduce peak liquidity draw by ~ZAR 12M, and prove the AI platform before committing to full scale. The Monte Carlo shows <4% negative NPV probability — disciplined deployment protects that margin."
   },
   {
     title: "ZAR 4-6M/Year Left on the Table",
@@ -373,7 +373,7 @@ function PriorityTag({ priority }) {
   const c = config[priority];
   return (
     <span style={{
-      color: c.color, fontSize: 10, fontWeight: 700, letterSpacing: "1.5px",
+      color: c.color, fontSize: 12, fontWeight: 700, letterSpacing: "1.5px",
       border: `1px solid ${c.color}33`, padding: "2px 8px", borderRadius: 3
     }}>
       {c.label}
@@ -417,7 +417,7 @@ export default function OpsModel() {
       {/* Header */}
       <div style={{ borderBottom: `1px solid ${border}`, padding: "24px 28px 20px" }}>
         <div style={{ maxWidth: 880, margin: "0 auto" }}>
-          <h2 style={{ fontFamily: font, fontSize: 18, fontWeight: 700, margin: "0 0 6px", color: text1, lineHeight: 1.3 }}>
+          <h2 style={{ fontFamily: font, fontSize: 20, fontWeight: 700, margin: "0 0 6px", color: text1, lineHeight: 1.3 }}>
             Advanced Operational Model
           </h2>
           <p style={{ fontSize: 14, color: text2, margin: "0 0 20px", maxWidth: 600, lineHeight: 1.6 }}>
@@ -431,7 +431,7 @@ export default function OpsModel() {
                 background: surface, border: `1px solid ${border}`, borderRadius: 6,
                 padding: "8px 14px", minWidth: 100
               }}>
-                <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1.5px", color: text2, marginBottom: 3 }}>{m.label}</div>
+                <div style={{ fontFamily: font, fontSize: 11, letterSpacing: "1.5px", color: text2, marginBottom: 3 }}>{m.label}</div>
                 <div style={{ fontFamily: font, fontSize: 16, fontWeight: 700, color: i === 1 ? accent : text1 }}>{m.value}</div>
               </div>
             ))}
@@ -488,18 +488,18 @@ export default function OpsModel() {
                       <div className="fade-in" style={{ padding: "0 20px 20px" }}>
                         {/* Overview */}
                         <div style={{ background: bg, border: `1px solid ${p.accent}22`, borderRadius: 6, padding: 14, marginBottom: 16 }}>
-                          <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1.5px", color: p.accent, marginBottom: 6 }}>OVERVIEW</div>
+                          <div style={{ fontFamily: font, fontSize: 11, letterSpacing: "1.5px", color: p.accent, marginBottom: 6 }}>OVERVIEW</div>
                           <div style={{ fontSize: 12, lineHeight: 1.65, color: text2 }}>{p.description}</div>
                         </div>
 
                         {/* Partners */}
                         <div style={{ background: bg, border: `1px solid ${border}`, borderRadius: 6, padding: "10px 14px", marginBottom: 16 }}>
-                          <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1.5px", color: text2, marginBottom: 4 }}>RECOMMENDED PARTNERS</div>
+                          <div style={{ fontFamily: font, fontSize: 11, letterSpacing: "1.5px", color: text2, marginBottom: 4 }}>RECOMMENDED PARTNERS</div>
                           <div style={{ fontSize: 12, color: text1, lineHeight: 1.6 }}>{p.partners}</div>
                         </div>
 
                         {/* Opportunities */}
-                        <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1.5px", color: text2, marginBottom: 10 }}>OPPORTUNITIES</div>
+                        <div style={{ fontFamily: font, fontSize: 11, letterSpacing: "1.5px", color: text2, marginBottom: 10 }}>OPPORTUNITIES</div>
                         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                           {p.opportunities.map((opp, i) => {
                             const key = `${p.id}-${i}`;
@@ -527,7 +527,7 @@ export default function OpsModel() {
                                         { label: "COST", value: opp.cost, color: "#FBBF24" }
                                       ].map((d, j) => (
                                         <div key={j} style={{ background: surface, borderRadius: 4, padding: "8px 10px" }}>
-                                          <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "1px", color: d.color, marginBottom: 3 }}>{d.label}</div>
+                                          <div style={{ fontFamily: font, fontSize: 11, letterSpacing: "1px", color: d.color, marginBottom: 3 }}>{d.label}</div>
                                           <div style={{ fontSize: 11, color: text2, lineHeight: 1.5 }}>{d.value}</div>
                                         </div>
                                       ))}
@@ -597,12 +597,12 @@ export default function OpsModel() {
 
             {/* Effective leverage */}
             <div style={{ background: accent + "08", border: `1px solid ${accent}22`, borderRadius: 8, padding: "20px 24px" }}>
-              <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "2px", color: accent, marginBottom: 8 }}>EFFECTIVE LEVERAGE</div>
+              <div style={{ fontFamily: font, fontSize: 11, letterSpacing: "2px", color: accent, marginBottom: 8 }}>EFFECTIVE LEVERAGE</div>
               <div style={{ fontSize: 14, color: text1, lineHeight: 1.7 }}>
-                At steady state (Y3, 18 people, ZAR 10.5M), UCSA's AI-augmented team delivers output equivalent to a traditional 24-26 person team (~ZAR 16M). That's <span style={{ color: accent, fontWeight: 600 }}>ZAR 5.5M/year in effective leverage</span> — compounding to approximately ZAR 80M+ over the 15-year portfolio life.
+                At steady state (Y3, 18 people, ZAR 10.5M), UCSA's AI-augmented team delivers the output capacity of a 24–26 person organisation (~ZAR 16M). That's <span style={{ color: accent, fontWeight: 600 }}>ZAR 5.5M/year in effective leverage</span> — compounding to approximately ZAR 80M+ over the 15-year portfolio life.
               </div>
               <div style={{ fontSize: 12, color: text2, marginTop: 10, lineHeight: 1.6 }}>
-                Key shifts: PMs manage 12+ sites via digital twin (vs. 5 traditional). Sales closes 3x more deals via AI proposals. Technicians dispatched by prediction, not schedule. Finance runs automatically through Netvendor+Volter pipeline.
+                How it works: PMs manage 12+ sites each via digital-twin dashboards. Sales closes 3× more deals using AI-generated proposals. Technicians are dispatched by predictive algorithms, not fixed schedules. Finance runs automatically through the Netvendor + Volter pipeline.
               </div>
             </div>
           </div>
@@ -656,7 +656,7 @@ export default function OpsModel() {
                     ))}
                   </div>
                   <div style={{ marginTop: 12, padding: "8px 12px", background: accent + "08", borderRadius: 4, border: `1px solid ${accent}15` }}>
-                    <span style={{ fontFamily: font, fontSize: 9, letterSpacing: "1px", color: accent }}>OUTCOME </span>
+                    <span style={{ fontFamily: font, fontSize: 11, letterSpacing: "1px", color: accent }}>OUTCOME </span>
                     <span style={{ fontSize: 12, color: text2 }}>{p.outcome}</span>
                   </div>
                 </div>
@@ -686,7 +686,7 @@ export default function OpsModel() {
 
             {/* Bottom CTA */}
             <div style={{ marginTop: 32, background: surface, borderRadius: 8, padding: "24px 28px", border: `1px solid ${accent}22` }}>
-              <div style={{ fontFamily: font, fontSize: 9, letterSpacing: "2px", color: accent, marginBottom: 8 }}>THE CORE QUESTION</div>
+              <div style={{ fontFamily: font, fontSize: 11, letterSpacing: "2px", color: accent, marginBottom: 8 }}>THE CORE QUESTION</div>
               <p style={{ fontSize: 14, lineHeight: 1.7, color: text2, margin: 0 }}>
                 Is UCSA building an energy company that uses technology, or a technology platform that delivers energy?
                 The same ZAR 1.8M budget, deployed differently, creates fundamentally different businesses by Year 5.

@@ -288,7 +288,7 @@ export const teamData = {
     { milestone: "15 sites commissioned", headcount: 14, cost: "ZAR 9.2M", roles: "+ 1 Sales, 2 Field Technicians, 1 Admin", impact: "Sales momentum, tech handles portfolio monitoring" },
     { milestone: "25+ sites commissioned", headcount: 18, cost: "ZAR 10.5M", roles: "+ 1 PM, 2 Field Technicians, 1 Support", impact: "Full steady-state team. Overhead breakeven well behind." },
   ],
-  hiringImpact: "Overhead breakeven drops from ~30 sites (fixed hiring) to ~18 sites (phased). Year 1 staff cost drops from ZAR 8.2M to ZAR 5.1M, reducing the liquidity gap by ZAR 3.1M.",
+  hiringImpact: "Milestone-linked hiring achieves overhead breakeven at ~18 sites with Year 1 staff cost of ZAR 5.1M. Each hire is triggered by a commissioning milestone, not a calendar date — keeping the cost base lean until revenue supports it.",
   advisory: "3–4 person advisory board from Day 1: independent engineer (asset performance oversight), DFI/infrastructure finance professional, SA property industry specialist. Budget: ZAR 150–250K p.a.",
 };
 

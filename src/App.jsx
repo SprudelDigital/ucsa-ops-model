@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div style={{ fontFamily: t.fontBody, background: t.bg, minHeight: "100vh", color: t.text1 }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: ${t.bg}; }
@@ -25,13 +25,13 @@ export default function App() {
       <div style={{ borderBottom: `1px solid ${t.border}`, padding: "20px 28px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
           <div>
-            <div style={{ fontFamily: t.fontMono, fontSize: 9, letterSpacing: "3px", color: t.text2, marginBottom: 4 }}>
+            <div style={{ fontFamily: t.fontMono, fontSize: 11, letterSpacing: "2.5px", color: t.text2, marginBottom: 4 }}>
               UCSA ASSET COMPANY
             </div>
-            <div style={{ fontFamily: t.fontHead, fontSize: 18, fontWeight: 700, color: t.text1 }}>
+            <div style={{ fontFamily: t.fontHead, fontSize: 20, fontWeight: 700, color: t.text1 }}>
               Integrated Business Plan
             </div>
-            <div style={{ fontFamily: t.fontMono, fontSize: 10, color: t.text2, marginTop: 2 }}>
+            <div style={{ fontFamily: t.fontMono, fontSize: 11, color: t.text2, marginTop: 2 }}>
               March 2026 · Western & Southern Cape · Confidential
             </div>
           </div>
@@ -51,8 +51,8 @@ export default function App() {
                   background: mode === m.id ? t.accentLime : "transparent",
                   color: mode === m.id ? "#080E1A" : t.text2,
                   fontFamily: t.fontMono,
-                  fontSize: 11,
-                  fontWeight: 700,
+                  fontSize: 12,
+                  fontWeight: 600,
                   letterSpacing: "1.5px",
                   cursor: "pointer",
                   transition: "all 0.2s",

@@ -533,7 +533,7 @@ function CrossSellView({ data }) {
             {opp.revenue}
           </div>
           <div style={{ fontFamily: t.fontBody, fontSize: 12, color: t.text2 }}>
-            <span style={{ color: t.text2, fontFamily: t.fontMono, fontSize: 10, marginRight: 8 }}>TOP TARGETS:</span>
+            <span style={{ color: t.text2, fontFamily: t.fontMono, fontSize: 12, marginRight: 8 }}>TOP TARGETS:</span>
             {opp.clients.map(c => c.name).join(" \u00B7 ")}
           </div>
         </div>
@@ -598,12 +598,12 @@ function RegistryView({ data }) {
         <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: t.fontBody, fontSize: 12 }}>
           <thead>
             <tr style={{ position: "sticky", top: 0, background: t.surfaceHigh, zIndex: 2 }}>
-              <th style={{ padding: "10px 14px", textAlign: "left", color: t.text2, fontFamily: t.fontMono, fontSize: 10, letterSpacing: 1, borderBottom: `1px solid ${t.border}`, position: "sticky", left: 0, background: t.surfaceHigh, zIndex: 3 }}>CLIENT</th>
-              <th style={{ padding: "10px 8px", textAlign: "center", color: t.text2, fontFamily: t.fontMono, fontSize: 10, letterSpacing: 1, borderBottom: `1px solid ${t.border}`, width: 50 }}>TIER</th>
-              <th style={{ padding: "10px 8px", textAlign: "center", color: t.text2, fontFamily: t.fontMono, fontSize: 10, letterSpacing: 1, borderBottom: `1px solid ${t.border}`, width: 30 }}>#</th>
+              <th style={{ padding: "10px 14px", textAlign: "left", color: t.text2, fontFamily: t.fontMono, fontSize: 12, letterSpacing: 1, borderBottom: `1px solid ${t.border}`, position: "sticky", left: 0, background: t.surfaceHigh, zIndex: 3 }}>CLIENT</th>
+              <th style={{ padding: "10px 8px", textAlign: "center", color: t.text2, fontFamily: t.fontMono, fontSize: 12, letterSpacing: 1, borderBottom: `1px solid ${t.border}`, width: 50 }}>TIER</th>
+              <th style={{ padding: "10px 8px", textAlign: "center", color: t.text2, fontFamily: t.fontMono, fontSize: 12, letterSpacing: 1, borderBottom: `1px solid ${t.border}`, width: 30 }}>#</th>
               {activeSVC.map(sk => (
                 <th key={sk.key} style={{
-                  padding: "10px 4px", textAlign: "center", color: t.text2, fontFamily: t.fontMono, fontSize: 8,
+                  padding: "10px 4px", textAlign: "center", color: t.text2, fontFamily: t.fontMono, fontSize: 9,
                   letterSpacing: 0.5, borderBottom: `1px solid ${t.border}`, width: 38,
                   writingMode: "vertical-rl", transform: "rotate(180deg)", height: 80,
                 }}>
@@ -627,7 +627,7 @@ function RegistryView({ data }) {
                 </td>
                 <td style={{ padding: "7px 8px", textAlign: "center" }}>
                   <span style={{
-                    fontFamily: t.fontMono, fontSize: 9, fontWeight: 700, padding: "2px 6px", borderRadius: 3,
+                    fontFamily: t.fontMono, fontSize: 11, fontWeight: 600, padding: "2px 6px", borderRadius: 3,
                     background: `${tierColors[c.tier]}22`, color: tierColors[c.tier], letterSpacing: 0.5,
                   }}>
                     {tierLabels[c.tier]}

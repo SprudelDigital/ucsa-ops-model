@@ -9,7 +9,7 @@ export const theme = {
   accentLime: "#C4D32F",
   accentCyan: "#8FEBFF",
   accentBlue: "#4A81E5",
-  fontHead: "'Poppins', sans-serif",
-  fontBody: "'Inter', sans-serif",
-  fontMono: "'JetBrains Mono', monospace",
+  fontHead: "'Sora', sans-serif",
+  fontBody: "'DM Sans', sans-serif",
+  fontMono: "'IBM Plex Mono', monospace",
 };
